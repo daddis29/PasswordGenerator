@@ -1,37 +1,64 @@
-// Assignment Code
+//Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-//Alert Codes
-alert("Please create a password!");
+//Generate Password with 8-128 characters prompt
+function generatePassword() {
 
-var length = prompt("How many characters would you like your password to be?");
-while (length < 8 || length > 128) {
-  length = prompt("Length must be 8-128 characters. How many characters would you like your password to be?");
-}
+    var pwlength = prompt("How many characters would you like your password to contain?");
 
-var uppercases = confirm("Would like to include uppercase letters?");
-var lowercase = confirm("Would like to include lowercase letters?");
-var numbers = confirm("Would like to include numbers?");
-var symbols = confirm("Would like to include special characters?");
+    while (pwlength < 8 || pwlength > 128) {
+        alert("Password must be between 8-128 characters.");
+        pwlength = prompt("How many characters would you like your password to contain?");
+    }
 
-//When the user selects their character count, run this code.
+    //Strings to choose password characters from
+    lowercase = "abcdefghijklmnopqrstuvwxyz";
+    uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    numbers = "0123456789";
+    symbols = "!#'()*+@[_,-./:;<$%\]^&=>?`{|}~";
+    var passArray = "";
 
-//If the user wants uppercase letters, run this code. 
+    //Uppercase confirm
+    var uppercase = confirm("Would like to include uppercase letters?");
+    if (uppercase == true) {
+        passArray = passArray.concat(uppercase);
+    }
 
-//If the user wants lowercase letters, run this code.
+    //Lowercase confirm
+    var lowercase = confirm("Would like to include lowercase letters?");
+    if (lowercase == true) {
+        passArray = passArray.concat(lowercase);
+    }
 
-//If the user wants numbers, run this code.
+    //Numbers confirm
+    var numbers = confirm("Would like to include numbers?");
+    if (numbers == true) {
+        passArray = passArray.concat(numbers);
+    }
 
-//If the user wants special characters, run this code.
+    //Symbols confirm
+    var symbols = confirm("Would like to include special characters?");
+    if (symbols == true) {
+        passArray = passArray.concat(symbols);
+    }
+
+    //Final password to generate
+    finalPass = " ";
+    for (var i = 0; i < length; {
+        var randomPass = passArray[Math.floor(Math.random() * passArray.length)];
+        finalPass = finalPass.concat(randomPass);
+    }
+    return finalPass;
+};
+
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
