@@ -46,13 +46,10 @@ if (symbols == true) {
 
 //Final password to generate
 finalPass = " ";
-for (var i = 0; i < length; {
+for (var i = 0; i < length; i++) {
     var randomPass = passArray[Math.floor(Math.random() * passArray.length)]
-            finalPass = finalPass.concat(randomPass);
+    finalPass = finalPass.concat(randomPass);
 }
-    return finalPass;
-
-
 
 // Write password to the #password input
 function writePassword() {
@@ -63,6 +60,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-document.getElementById("btn").onclick = function () {
 
-}
+
