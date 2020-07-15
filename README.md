@@ -5,9 +5,9 @@ An employee with access to sensitive data wants to randomly generate a password 
 
 
 ```
-When the webpage loads, you are prompted with a series of questions regarding password criteria.
+When the webpage loads, you will see a password generation box.
 
-When you are prompted, you will select which criteria you’d like to include: uppercase, lowercase, special characters and numbers.
+When you click Generate Password, you will answer a series of prompts to select which criteria you’d like to include: uppercase, lowercase, special characters and numbers.
 
 When you are prompted for the password, you will be informed it must be between 8-128 characters.
 
